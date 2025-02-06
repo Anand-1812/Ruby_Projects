@@ -15,7 +15,7 @@ def convert(char, key, alphabet)
 
   cipher_indx = (idx+key) % alphabet.size
   new_char = alphabet[cipher_indx]
-is_upper ? new_char.upcase : new_char
+  is_upper ? new_char.upcase : new_char
 end
 
 def ceaser_cipher(string, key, alphabet)
