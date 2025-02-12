@@ -1,19 +1,17 @@
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l','m', 
-            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'    
-          ]
+# frozen_string_literal: true
+
+alphabet = %w[a b c d e f g h i j k l m
+              n o p q r s t u v w x y z]
 
 def convert(char, key, alphabet)
-  if char == ' '
-    return char
-  end
-  
+  return char if char == ' '
 
   is_upper = (char == char.upcase)
   char = char.downcase
   idx = alphabet.find_index(char)
   return char unless idx
 
-  cipher_indx = (idx+key) % alphabet.size
+  cipher_indx = (idx + key) % alphabet.size
   new_char = alphabet[cipher_indx]
   is_upper ? new_char.upcase : new_char
 end
@@ -24,11 +22,10 @@ def ceaser_cipher(string, key, alphabet)
   result.join
 end
 
-
-puts "Enter the string: "
+puts 'Enter the string: '
 str = gets.chomp
 
-puts "Enter the key for shifting: "
+puts 'Enter the key for shifting: '
 key = gets.chomp
 
 puts "str is #{str}"
