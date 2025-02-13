@@ -3,6 +3,7 @@ class Board
     @grid = Array.new(3) { Array.new(3, " ") }
   end
 
+  # display the grid
   def display
     puts "\n"
     @grid.each_with_index do |row, i|
@@ -12,6 +13,7 @@ class Board
     puts "\n"
   end
 
+  # update the position as players enters their choices
   def update(position, symbol)
     row, col = position
     if @grid[row][col] == " "
@@ -21,6 +23,7 @@ class Board
     false
   end
 
+  # check the winner
   def check_winner
     lines = @grid + @grid.transpose + diagonals
     lines.each do |line|

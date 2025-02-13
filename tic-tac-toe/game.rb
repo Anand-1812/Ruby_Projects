@@ -9,6 +9,7 @@ class Game
     @current_player = @player1
   end
 
+  # logic for play
   def play
     loop do
       @board.display
